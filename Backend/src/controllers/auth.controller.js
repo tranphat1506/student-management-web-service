@@ -56,7 +56,9 @@ const signIn = async (req, res)=>{
             res.cookie('a_token', arrayToken[0].encoded, {
                 sameSite: 'none',
                 httpOnly : false,
-                secure : true
+                secure : true,
+                path : '/',
+                domain:'localhost'
             })
             return res.sendStatus(200); 
         })
