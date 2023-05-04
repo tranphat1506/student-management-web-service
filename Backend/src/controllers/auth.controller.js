@@ -11,6 +11,7 @@ const REFRESH_TOKEN_LIFE = process.env.REFRESH_TOKEN_LIFE
 const bcrypt = require('bcrypt');
 const saltRounds = 8;
 const {roleDisplay} = require("../helpers/roledisplay.helpers")
+const cookieHelper = require('../helpers/cookie.helper')
 const signIn = async (req, res)=>{
     const {user_name, password, remember_pwd} = req.body;
     try {
@@ -237,12 +238,8 @@ const signUp = async (req, res)=>{
 }
 
 const signOut = (req, res)=>{
-    console.log(req.cookies.a_token);
-    res.clearCookie('test', {
-        domain : 'apiuwuservice.onrender.com',
-        path : '/'
-    })
-    res.clearCookie('a_token');
+    //console.log(req.cookies.a_token);
+    cookieHelper.clearCookie(res, 'a_token');
     return res.sendStatus(200);
 }
 
@@ -342,19 +339,8 @@ const authCheck = (req,res)=>{
         process.env.NODE_ENV != 'development'
         ? logEvents(`${error.name}: ${error.message}`,`errors`)
         :   console.log(`${error.name}: ${error.message}`);
-        console.log(req.cookies.a_token);
-        res.cookie('a_token', '', {
-            maxAge : 1, // 1 hour
-            sameSite: 'none',
-            httpOnly : false,
-            secure : true
-        })
-        res.cookie('test', '', {
-            maxAge : 1, // 1 hour
-            sameSite: 'none',
-            httpOnly : false,
-            secure : true
-        })
+
+        cookieHelper.clearCookie(res, 'a_token'); //important 
         return res.status(401).json({
             code : 401,
             message : 'No Authorized!'
