@@ -57,8 +57,7 @@ const signIn = async (req, res)=>{
                 sameSite: 'none',
                 httpOnly : false,
                 secure : true,
-                path : '/',
-                domain:'localhost'
+                path : '/'
             })
             return res.sendStatus(200); 
         })
@@ -341,9 +340,7 @@ const authCheck = (req,res)=>{
         :   console.log(`${error.name}: ${error.message}`);
         console.log(req.cookies.a_token);
         res.clearCookie('a_token',{
-            sameSite: 'none',
-            httpOnly : false,
-            secure : true
+            path : '/'
         }); // important
         return res.status(401).json({
             code : 401,
