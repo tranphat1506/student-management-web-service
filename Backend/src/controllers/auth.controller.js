@@ -11,7 +11,6 @@ const REFRESH_TOKEN_LIFE = process.env.REFRESH_TOKEN_LIFE
 const bcrypt = require('bcrypt');
 const saltRounds = 8;
 const {roleDisplay} = require("../helpers/roledisplay.helpers")
-const cookieHelper = require('../helpers/cookie.helper')
 const signIn = async (req, res)=>{
     const {user_name, password, remember_pwd} = req.body;
     try {
@@ -340,7 +339,9 @@ const authCheck = (req,res)=>{
         ? logEvents(`${error.name}: ${error.message}`,`errors`)
         :   console.log(`${error.name}: ${error.message}`);
 
-        cookieHelper.removeCookie(res, 'a_token'); //important 
+        res.cookie('a_token','',{
+            maxAge : 1
+        }); //important 
         return res.status(401).json({
             code : 401,
             message : 'No Authorized!'
