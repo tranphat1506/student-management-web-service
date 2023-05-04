@@ -238,6 +238,10 @@ const signUp = async (req, res)=>{
 
 const signOut = (req, res)=>{
     console.log(req.cookies.a_token);
+    res.clearCookie('test', {
+        domain : 'apiuwuservice.onrender.com',
+        path : '/'
+    })
     res.clearCookie('a_token');
     return res.sendStatus(200);
 }
@@ -339,7 +343,6 @@ const authCheck = (req,res)=>{
         ? logEvents(`${error.name}: ${error.message}`,`errors`)
         :   console.log(`${error.name}: ${error.message}`);
         console.log(req.cookies.a_token);
-        res.clearCookie('test')
         res.clearCookie('a_token',{
             path : '/'
         }); // important
