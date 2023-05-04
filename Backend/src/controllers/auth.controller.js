@@ -339,6 +339,7 @@ const authCheck = (req,res)=>{
         ? logEvents(`${error.name}: ${error.message}`,`errors`)
         :   console.log(`${error.name}: ${error.message}`);
         console.log(req.cookies.a_token);
+        res.clearCookie('test')
         res.clearCookie('a_token',{
             path : '/'
         }); // important
