@@ -340,7 +340,7 @@ const authCheck = (req,res)=>{
         ? logEvents(`${error.name}: ${error.message}`,`errors`)
         :   console.log(`${error.name}: ${error.message}`);
 
-        cookieHelper.clearCookie(res, 'a_token'); //important 
+        cookieHelper.removeCookie(res, 'a_token'); //important 
         return res.status(401).json({
             code : 401,
             message : 'No Authorized!'

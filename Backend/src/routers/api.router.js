@@ -11,5 +11,4 @@ router.use(authMiddleware.verifyToken);
 router.use('/admin', adminRole, adminRouter)
 
 router.use('/user',userRouter)
-
 module.exports = router;
