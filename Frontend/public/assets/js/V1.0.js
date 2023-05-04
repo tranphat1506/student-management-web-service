@@ -66,13 +66,13 @@ const fetchList = {
 }
 fetchList.isLogin()
 .then(function (r){
-    if(r.status == 403){
-        throw Error("Authorized fail!")
-    }
+    if(r.status == 403)
+        throw Error('Not login!')
     if (r.status == 401){
         //removeCookie('a_token');
-        fetchList.refreshToken().catch(function(){
-            window.location.href = `/auth?method=sign-in&redirect=${window.location.pathname}`
+        fetchList.refreshToken()
+        .catch(function(){
+            return window.location.href = `/auth?method=sign-in&redirect=${window.location.pathname}`
         })
     }
     const paths = window.location.pathname.split('/')
