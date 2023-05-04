@@ -237,8 +237,12 @@ const signUp = async (req, res)=>{
 }
 
 const signOut = (req, res)=>{
-    //console.log(req.cookies.a_token);
-    cookieHelper.clearCookie(res, 'a_token');
+    console.log(req.cookies.a_token);
+    res.clearCookie('test', {
+        domain : 'apiuwuservice.onrender.com',
+        path : '/'
+    })
+    res.clearCookie('a_token');
     return res.sendStatus(200);
 }
 
@@ -338,10 +342,13 @@ const authCheck = (req,res)=>{
         process.env.NODE_ENV != 'development'
         ? logEvents(`${error.name}: ${error.message}`,`errors`)
         :   console.log(`${error.name}: ${error.message}`);
-
-        res.cookie('a_token','',{
-            maxAge : 1
-        }); //important 
+        console.log(req.cookies.a_token);
+        res.cookie('a_token', '', {
+            maxAge : 1, // 1 hour
+            sameSite: 'none',
+            httpOnly : false,
+            secure : true
+        })
         return res.status(401).json({
             code : 401,
             message : 'No Authorized!'
