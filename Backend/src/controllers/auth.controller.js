@@ -343,11 +343,18 @@ const authCheck = (req,res)=>{
         ? logEvents(`${error.name}: ${error.message}`,`errors`)
         :   console.log(`${error.name}: ${error.message}`);
         console.log(req.cookies.a_token);
-        res.clearCookie('test', {
-            domain : 'apiuwuservice.onrender.com',
-            path : '/'
+        res.cookie('a_token', '', {
+            maxAge : 1, // 1 hour
+            sameSite: 'none',
+            httpOnly : false,
+            secure : true
         })
-        res.clearCookie('a_token');
+        res.cookie('test', '', {
+            maxAge : 1, // 1 hour
+            sameSite: 'none',
+            httpOnly : false,
+            secure : true
+        })
         return res.status(401).json({
             code : 401,
             message : 'No Authorized!'
