@@ -1,0 +1,280 @@
+/* FONT */
+@font-face {
+    font-family: "kanit-re";
+    src: url('../font/Kanit-Regular.ttf');
+}
+@font-face {
+    font-family: "kanit-thin";
+    src: url('../font/Kanit-Light.ttf');
+}
+@font-face {
+    font-family: "kanit-med";
+    src: url('../font/Kanit-Medium.ttf');
+}
+.blur--on{
+	visibility: visible !important;
+}
+.blur--on #login_form, .blur--on #register_form{
+	transform: translateY(0);
+}
+.blur-bg
+{
+	visibility: hidden;
+	top: 0;
+	display: flex;
+	z-index: 100;
+    position: fixed;
+    width: 100%;
+	min-height: 100%;
+	height: max-content;
+	align-items: center;
+    justify-content: center;
+	background-color: #c6c6c6da;
+}
+#login_form, #register_form
+{
+	transform: translateY(-2000px);
+	transition: all 700ms;
+	min-width: 500px;
+	width: min-content;
+	padding: 30px 0;
+	background-color: #fff;
+	border-radius: 7px;
+	overflow: auto;
+}
+form .form-close-btn, div .form-close-btn{
+	font-weight: bold;
+	cursor: pointer;
+	color: rgb(78, 78, 78);
+	margin-left: 1em;
+}
+.title-form{
+	height: 80px;
+	margin: 0 .5em;
+	text-align: center;
+	font-size: 50px;
+	font-weight: bold;
+	font-family: 'kanit-med', Helvetica, sans-serif;
+}
+.error-message{
+	font-size: 1em;
+	height: auto;
+	margin: 2em 5px 5px 5px;
+	font-weight: 200;
+}
+.message--normal{
+	color: #795548;
+	text-decoration: none;
+}
+.message--error{
+	color: rgb(255, 110, 110);
+	text-decoration: none;
+}
+.message--success{
+	color: rgb(88, 187, 63);
+	text-decoration: none;
+}
+.title-form__text{
+	color: rgb(78, 78, 78);
+	position: relative;
+	top: 15px;
+}
+.inside-card{
+	display: flex;
+	flex-direction: column;
+	font-size: 20px;
+	font-weight: 550;
+	font-family: 'kanit-thin', Helvetica, sans-serif;
+
+	margin: 0 auto;
+    width: 90%;
+}
+.inside-card .input{
+	display: inline-flex;
+	align-items: center;
+	margin: 5px 0;
+	gap: 10px;
+}
+.inside-card input, .inside-card button,
+.inside-card select, .inside-card option{
+	padding: 12px;
+	width: 100%;
+	font-size: 18px;
+	font-family: 'kanit-thin', Helvetica, sans-serif;
+	border-radius: 10px;
+}
+.input--normal{
+	border: rgb(206, 206, 206) 2px solid;
+	background-color: rgba(240, 240, 240, 0.541);
+}
+.input--error{
+	border: rgb(253, 110, 110) 3px solid !important;
+	background-color: rgba(255, 112, 112, 0.541) !important;
+}
+.input--success{
+	border: rgb(97, 255, 123) 3px solid !important;
+	background-color: rgba(62, 255, 94, 0.562) !important;
+}
+.inside-card input[type=checkbox]{
+	width: auto;
+}
+.inside-card label:has(input[type=checkbox]){
+	width: min-content;
+}
+.undisplay{
+	display: none !important;
+}
+.input__title {
+	min-width: 150px;
+	cursor: pointer;
+}
+
+.inside-card .remember-password .input__title{
+	color: rgb(0, 0, 0);
+}
+.link_forgot-password{
+	color: rgb(57, 166, 255);
+}
+.link_forgot-password:hover{
+	color: rgb(48, 131, 199);
+}
+.inside-card .login-submit{
+	cursor: pointer;
+	margin: 15px 0;
+	color: #fff;
+	border: none;
+	background-color: rgb(57, 166, 255);
+	box-shadow: 0px 5px 1px -2px rgb(47, 138, 212);
+	-webkit-box-shadow: 0px 5px 1px -2px rgb(47, 138, 212);
+	-moz-box-shadow: 0px 5px 1px -2px rgb(47, 138, 212);
+}
+
+.inside-card .btn-sign-in:hover{
+	background-color: rgb(36, 105, 161);
+}
+.inside-card .adminCode-label, 
+.inside-card .verify-code{
+	display: none;
+}
+.inside-card .btn-sign-up{
+	background-color: #76d359;
+	box-shadow: 0px 5px 1px -2px #795548;
+	-webkit-box-shadow: 0px 5px 1px -2px #795548;
+	-moz-box-shadow: 0px 5px 1px -2px #795548;
+}
+.inside-card .btn-sign-up:hover{
+	background-color: #5aa144;
+}
+.progress-container{
+	min-height: calc(40px + 2em);
+	margin: 0 10px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-family: 'kanit-med', Helvetica, sans-serif;
+}
+.progress{
+	border-radius: 100%;
+	width: 40px;
+	height: 40px;
+	color: #fff;
+	z-index: 1;
+	background-color: rgb(194, 194, 194);
+}
+.progress--done,
+.progress-bar--done{
+	background-color: #76d359 !important;
+}
+.progress-title--done{
+	color: #76d359 !important;
+}
+.progress-label{
+	width: inherit;
+    height: inherit;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+.progress-bar{
+	width: 40px;
+	height: 4px;
+	background-color: rgb(194, 194, 194);
+}
+.progress-label .finish-icon,
+.progress-label .info-icon{
+	font-size: 2em;
+    font-weight: bold;
+}
+.progress-label .mail-icon,
+.progress-label .account-icon{
+	font-size: 1.7em;
+}
+.progress-title{
+    width: max-content;
+    right: 15px;
+    position: relative;
+    font-family: 'kanit-re',sans-serif;
+	color: rgb(194, 194, 194);
+}
+label{
+	cursor: pointer;
+}
+
+.loader {
+	border: 6px solid #f3f3f3;
+	border-radius: 50%;
+	border-top: 6px solid gray;
+	width: 20px;
+	height: 20px;
+	-webkit-animation: spin 2s linear infinite; /* Safari */
+	animation: spin 2s linear infinite;
+}
+.inside-card .loader{
+	margin: 0 auto;
+}
+.error-message .loader{
+	width: 100px;
+	height: 100px;
+	margin: 30% auto;
+	border: 12px solid #f3f3f3;
+	border-top: 12px solid gray;
+}
+  
+/* Safari */
+@-webkit-keyframes spin {
+	0% { -webkit-transform: rotate(0deg); }
+	100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+	0% { transform: rotate(0deg); }
+	100% { transform: rotate(360deg); }
+}
+
+@media (max-height: 580px){
+	#login_form, #register_form{
+		height: 80vh;
+	}
+}
+.redirectSignIn{
+    color: darkslategrey;
+	text-align: center;
+}
+#role-select{
+	width: 60%;
+}
+@media (max-width: 500px){
+    #register_form, #login_form{
+		min-width: 100%;
+	}
+	.progress-title{
+		display: none;
+	}
+	.title-form{
+		font-size: 10vw;
+	}
+	.error-message{
+		margin: 5px;
+		font-size: 1.3em;
+	}
+}

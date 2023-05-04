@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/css/loginForm.css" type="text/css">
+    <link rel="stylesheet" href="/assets/css/normalize.css" type="text/css">
+    <title>;o; - Đăng nhập hoặc đăng ký</title>
+    <link rel="shortcut icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@40,200,1,200" />
+<body>
+    <div class="blur-bg">
+        <form id="register_form" onsubmit="return false">
+            <div class="title-form">
+                <p class="title-form__text">Tạo tài khoản mới</p>
+            </div>
+            <div class="progress-container">
+                <div class="progress progress--done info-label" name="progress-1">
+                    <div class="progress-label">
+                        <span class="material-symbols-outlined info-icon">
+                            person
+                        </span>
+                    </div>
+                    <div class="progress-title progress-title--done">
+                        Thông tin
+                    </div>
+                </div>
+                <div class="progress-bar progress-bar--done"></div>
+                <div class="progress-bar progress-bar--done"></div>
+                <div class="progress progress--done account-label" name="progress-1">
+                    <div class="progress-label">
+                        <span class="material-symbols-outlined account-icon">
+                            lock_open
+                        </span>
+                    </div>
+                    <div class="progress-title">
+                        Tài khoản
+                    </div>
+                </div>
+                <div class="progress-bar progress-bar--done"></div>
+                <div class="progress-bar progress-bar--done"></div>
+                <div class="progress progress--done progress mail-verify-label" name="progress-1">
+                    <div class="progress-label">
+                        <span class="material-symbols-outlined mail-icon">
+                            mail
+                        </span>
+                    </div>
+                    <div class="progress-title">
+                        Xác thực
+                    </div>
+                </div>
+                <div class="progress-bar progress-bar--done"></div>
+                <div class="progress-bar progress-bar--done"></div>
+                <div class="progress progress--done finish-label" name="progress-1">
+                    <div class="progress-label">
+                        <span class="material-symbols-outlined finish-icon">
+                            check_small
+                        </span>
+                    </div>
+                    <div class="progress-title">
+                        Chào mừng
+                    </div>
+                </div>
+            </div>
+            <div class="error-message title-form">
+                <p class="message--success">Xác thực thành công email <span style="color: lightgray;"><%= userEmail %>!</span></p>
+                <p class="message--success redirect-message">Tự động chuyển về trang đăng nhập sau 10 giây.</p>
+            </div>
+            <div class="inside-card info-card">
+                <button type="button" class="login-submit btn-sign-up" onclick="redirectSignIn()">Quay về trang đăng nhập</button>
+            </div>
+        </form>
+    </div>
+    <script>
+        var TIME = 10;
+        const redirect = setInterval(function () {
+            if (!TIME){
+                return redirectSignIn();
+            }
+            const messageElement = document.querySelector('.error-message .redirect-message');
+            const message = `Tự động chuyển về trang đăng nhập sau ${TIME} giây.`
+            messageElement.textContent = message
+            return TIME--;
+        },1000);
+        function redirectSignIn() {
+            clearInterval(redirect);
+            return window.location.href = '/auth?method=sign-in';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+{
+  "name": "frontend_student_management_web_service",
+  "version": "1.0.0",
+  "description": "This project is about student management services for educational centers or schools that want to manage learners more easily.",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon -e js,ejs,html,css -w . -w public -w views -w routes -w models -w css server.js",
+    "prod": "npm start ./build/bundle.js",
+    "build-dev": "webpack --mode development --config webpack.config.js",
+    "build-prod": "webpack --mode production --config webpack.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tranphat1506/student-management-web-service.git"
+  },
+  "author": "Tran Phat",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tranphat1506/student-management-web-service/issues"
+  },
+  "homepage": "https://github.com/tranphat1506/student-management-web-service#readme",
+  "devDependencies": {
+    "@babel/core": "^7.20.12",
+    "@babel/preset-env": "^7.20.2",
+    "babel-loader": "^9.1.2",
+    "css-loader": "^6.7.3",
+    "nodemon": "^2.0.20",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1",
+    "webpack-node-externals": "^3.0.0"
+  },
+  "dependencies": {
+    "body-parser": "^1.20.1",
+    "compression": "^1.7.4",
+    "cookie-parser": "^1.4.6",
+    "date-fns": "^2.29.3",
+    "dotenv": "^16.0.3",
+    "ejs": "^3.1.8",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.0",
+    "node-fetch": "^2.6.9",
+    "nodemailer": "^6.9.1",
+    "underscore": "^1.13.6",
+    "uuid": "^9.0.0"
+  }
+}

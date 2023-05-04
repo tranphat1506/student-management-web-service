@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/css/loginForm.css" type="text/css">
+    <link rel="stylesheet" href="/assets/css/normalize.css" type="text/css">
+    <link rel="stylesheet" href="/assets/css/styles.css" type="text/css">
+    <title>Admin Page</title>
+    <link rel="shortcut icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+
+</head>
+<body>
+    <div class="blur-bg blur--on">
+        <form id="login_form" onsubmit="return false">
+            <div class="title-form">
+                <p class="title-form__text">Xác nhận danh tính</p>
+            </div>
+            <div class="error-message title-form">
+                <p class="message--normal">Admin: Mã xác nhận sẽ gửi vào email mà bạn đã liên kết vào tài khoản này! Nếu nhập quá 3 lần sẽ bị khóa 10 phút!</p>
+            </div>
+            <div class="inside-card">        
+                <label for="adminCode-input" class="input adminCode-label">
+                    <input type="text" name="admin-code" class = "input--normal" id="adminCode-input" placeholder="Mã xác nhận">
+                </label>
+                <button type="button" class="login-submit send-code" onclick="sendcode()">Gửi mã xác nhận</button>
+                <button type="submit" class="login-submit verify-code" onclick="verifycode()">Đăng nhập</button>
+            </div>
+        </form>
+    </div>
+    <script src="/assets/js/admin.js"></script>
+    <script src="/assets/js/V1.0.js"></script>
+    <script src="/assets/js/main.js"></script>
+</body>
+</html>

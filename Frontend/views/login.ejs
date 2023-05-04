@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/css/loginForm.css" type="text/css">
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="stylesheet" href="/assets/css/normalize.css" type="text/css">
+    <title>;o; - Đăng nhập hoặc đăng ký</title>
+    <link rel="shortcut icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@40,200,1,200" />
+
+</head>
+<body>
+    <div class="blur-bg blur--on">
+        <form id="login_form" onsubmit="return false">
+            <span class="material-symbols-outlined form-close-btn" onclick="redirectHome()"></span>
+            <div class="title-form">
+                <p class="title-form__text">Đăng nhập</p>
+            </div>
+            <div class="error-message title-form">
+            </div>
+            <div class="inside-card">
+                <div class="input">
+                    <input type="text" class = "input--normal" name="username" id="username-input" autocomplete="username" placeholder="SĐT hoặc tên đăng nhập">
+                </div>
+        
+                <div class="input">
+                    <input type="password" class = "input--normal" name="password" id="password-input" autocomplete="current-password" placeholder="Mật khẩu">
+                    <a href="#" class="link_forgot-password">QUÊN?</a>
+                </div>
+        
+                <div class="input undisplay show-password">
+                    <input type="checkbox" name="show-password" id="show-password">
+                    <label for="show-password" class="input__title">Hiện mật khẩu</label>
+                </div>
+
+                <div class="input remember-password">
+                    <input type="checkbox" name="remember-password" id="remember-password">
+                    <label for="remember-password" class="input__title">Lưu tài khoản</label>
+                </div>
+
+                <button type="submit" class="login-submit btn-sign-in" onclick="dangnhap()">Đăng nhập</button>
+                <button type="button" class="login-submit btn-sign-up" onclick="redirectSignUp()">Hoặc đăng ký</button>
+            </div>
+        </form>
+    </div>
+    <script src="/assets/js/form.js"></script>
+    <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/V1.0.js"></script>
+</body>
+</html>

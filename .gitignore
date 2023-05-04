@@ -1,0 +1,5 @@
+FE-copy/
+FakeAPI/
+.vscode/
+*/.env
+*/node_modules/

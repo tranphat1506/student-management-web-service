@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/css/loginForm.css" type="text/css">
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="stylesheet" href="/assets/css/normalize.css" type="text/css">
+    <title>;o; - Đăng nhập hoặc đăng ký</title>
+    <link rel="shortcut icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@40,200,1,200" />
+<body>
+    <div class="blur-bg blur--on">
+        <form id="register_form" onsubmit="return false" autocomplete="off">
+            <span class="material-symbols-outlined form-close-btn" onclick="redirectHome()"></span>
+            <div class="title-form">
+                <p class="title-form__text">Tạo tài khoản mới</p>
+            </div>
+            <div class="progress-container">
+                <div class="progress progress--done info-label" name="progress-1">
+                    <div class="progress-label">
+                        <span class="material-symbols-outlined info-icon">
+                            person
+                        </span>
+                    </div>
+                    <div class="progress-title progress-title--done">
+                        Thông tin
+                    </div>
+                </div>
+                <div class="progress-bar progress-bar--done"></div>
+                <div class="progress-bar"></div>
+                <div class="progress account-label" name="progress-1">
+                    <div class="progress-label">
+                        <span class="material-symbols-outlined account-icon">
+                            lock_open
+                        </span>
+                    </div>
+                    <div class="progress-title">
+                        Tài khoản
+                    </div>
+                </div>
+                <div class="progress-bar"></div>
+                <div class="progress-bar"></div>
+                <div class="progress progress mail-verify-label" name="progress-1">
+                    <div class="progress-label">
+                        <span class="material-symbols-outlined mail-icon">
+                            mail
+                        </span>
+                    </div>
+                    <div class="progress-title">
+                        Xác thực
+                    </div>
+                </div>
+                <div class="progress-bar"></div>
+                <div class="progress-bar"></div>
+                <div class="progress finish-label" name="progress-1">
+                    <div class="progress-label">
+                        <span class="material-symbols-outlined finish-icon">
+                            check_small
+                        </span>
+                    </div>
+                    <div class="progress-title">
+                        Chào mừng
+                    </div>
+                </div>
+            </div>
+            <div class="error-message title-form">
+            </div>
+            <div class="inside-card info-card">
+                <div class="input">
+                    <div class="input">
+                        <input type="text" class = "input--normal" name="fname" id="fname-input" autocomplete="given-name" placeholder="Tên">
+                    </div>
+                    <input type="text" class = "input--normal" name="lname" id="lname-input" autocomplete="family-name" placeholder="Họ và tên đệm">
+                </div>
+                <label for="bday-day" class="sub-title">
+                    Ngày sinh:
+                </label>
+                <div class="input">
+                    <select name="bday-day" id="dBirth-input" class="input--normal" title="Ngày" autocomplete="bday-day">
+                    </select>
+                    <select name="bday-month" id="mBirth-input" class="input--normal" title="Tháng" autocomplete="bday-month">
+                    </select>
+                    <select name="bday-year" id="yBirth-input" class="input--normal" title="Năm" autocomplete="bday-year">
+                    </select>
+                </div>
+                <label for="role-select" class="sub-title">
+                    Vai trò:
+                </label>
+                <div class="input">
+                    <select name="role-select" id="role-select" class="input--normal" title="Bạn là?">
+                        <option value="default" selected>
+                            Bạn là ?
+                        </option>
+                        <option value="hoc-sinh">
+                            Học sinh
+                        </option>
+                        <option value="giao-vien">
+                            Giáo viên
+                        </option>
+                        <option value="phu-huynh">
+                            Phụ huynh
+                        </option>
+                        <option value="to-chuc-giao-duc">
+                            Tổ chức giáo dục
+                        </option>
+                    </select>
+                    <div class="input">
+                        <label for="sex-choice-1" class="input">
+                            <input type="radio" name="sex-choice" id="sex-choice-1" value="1" checked>
+                            Nam
+                        </label>
+                        <label for="sex-choice-0" class="input">
+                            <input type="radio" name="sex-choice" id="sex-choice-0" value="0">
+                            Nữ
+                        </label>
+                    </div>
+                </div>
+                <button type="submit" class="login-submit btn-sign-up" onclick="dangky()">Tiếp theo</button>
+            </div>
+            <div class="inside-card account-card undisplay">
+                <div class="input">
+                    <input type="text" class = "input--normal" name="username" id="username-input" placeholder="Tên đăng nhập">
+                </div>
+                <div for="new-password-input" class="input">
+                    <input type="password" class = "input--normal" name="new-password" id="new-password-input" autocomplete="new-password" placeholder="Mật khẩu">
+                    <input type="password" class = "input--normal" name="re-password" id="re-password-input" autocomplete="current-password" placeholder="Nhập lại mật khẩu">
+                </div>
+                <div class="input">
+                    <input type="tel" class = "input--normal" name="tel" id="tel-input" autocomplete="tel" placeholder="Số điện thoại" maxlength="10">
+                </div>
+                <div class="input">
+                    <input type="email" class = "input--normal" name="email" id="email-input" autocomplete="email" placeholder="Email">
+                </div>
+                <button type="submit" class="login-submit btn-sign-up" onclick="dangky()">Tiếp theo</button>
+            </div>
+            <div class="inside-card verify-card undisplay">
+                <select name="device-verify" id="device-verify" class="input--normal" title="Chọn phương thức xác thực">
+                    <option value="default" selected>Chọn phương thức xác thực</option>
+                    <option value="phone">Xác minh bằng số điện thoại</option>
+                    <option value="email">Xác minh bằng email</option>
+                </select>
+                <button type="submit" class="login-submit btn-sign-up" onclick="dangky()">Đăng ký</button>
+            </div>
+            <div class="inside-card">
+                <a href="/auth?method=sign-in" class="redirectSignIn">Đã có tài khoản?</a>
+            </div>
+        </form>
+    </div>
+    <script src="/assets/js/form.js"></script>
+    <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/V1.0.js"></script>
+</body>
+</html>
