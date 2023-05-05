@@ -28,7 +28,13 @@ const loginPage = async (req, res)=>{
                     body : JSON.stringify({token})
                 })
                 if (response.status >= 400){
-                    return res.status(400).render("404page")
+                    return res.status(404).render('notificationTemplate', {
+                        title : "o-O! Có gì đó sai sai",
+                        isError : true,
+                        errorCode : 404,
+                        main_message: "ERROR 404: KHÔNG THỂ TÌM THẤY TRANG",
+                        sub_message: 'Xin lỗi chúng tôi không thể tìm thấy trang mà bạn cần. Có thể nội dung đã bị xóa.'
+                    });
                 }
                 const json = await response.json()
                 return res.status(200).render('emailVerifyDone',{

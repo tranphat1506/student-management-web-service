@@ -31,7 +31,7 @@ router.use('/admin', adminRouter);
 
 // 404 page
 router.get('/*', (req,res)=>{
-    return res.render('notificationTemplate', {
+    return res.status(404).render('notificationTemplate', {
         title : "o-O! Có gì đó sai sai",
         isError : true,
         errorCode : 404,
