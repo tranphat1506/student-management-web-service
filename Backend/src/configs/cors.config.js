@@ -1,4 +1,4 @@
-const whitelist = ['http://127.0.0.1:5500', 'http://localhost:3000', 'http://localhost']
+const whitelist = ['http://127.0.0.1:5500', 'http://localhost:3000', 'http://localhost', 'https://uwu-mhng.onrender.com']
 const normalCorsOptions = {
     origin : (origin, callback) =>{
                                                 /* Here mean localhost == undefinded */

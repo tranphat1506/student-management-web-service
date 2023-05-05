@@ -169,7 +169,7 @@ window.onclick= function(e){
         if (!currentMenuOpen.srcElement.contains(e.target)
         && !currentMenuOpen.wrapperElement.contains(e.target))
         {
-            currentMenuOpen.wrapperElement.classList.toggle('wrapper-open');
+            currentMenuOpen.wrapperElement.classList.remove('wrapper-open');
             currentMenuOpen = {
                 srcElement : undefined,
                 wrapperElement : undefined
