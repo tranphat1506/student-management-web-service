@@ -169,7 +169,7 @@ const signUp = async (req, res)=>{
         if (_.isNull(userInDB)){
             // send verify code to device
             const code = await uuidv4();
-            const html = template.sendVerifyCode("http://localhost/home",`http://localhost/auth?method=verify&token=${code}`,user_name)
+            const html = template.sendVerifyCode(process.env.FE_URL+"/home",`${process.env.FE_URL}/auth?method=verify&token=${code}`,user_name)
             if (method == "email"){
                 await nodeMailer.sendMail("gmail", req.body[method], "Xác Thực Tài Khoản Mới",html)
             }
